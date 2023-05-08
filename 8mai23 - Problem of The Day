@@ -1,1 +1,18 @@
+firstNumber = float(input("Enter first number:")) #user input
+secondNumber = float(input("Enter second number:")) #user input
+thirdNumber = float(input("Enter third number:")) #user input
 
+
+#checking which of the 3 numbers is greater or if they are equal to each other
+
+if (firstNumber==secondNumber==thirdNumber):
+  print("The numbers are all equal =",firstNumber)
+elif (secondNumber >= firstNumber) and (secondNumber >= thirdNumber):
+   largest = secondNumber
+elif (firstNumber >= secondNumber) and (firstNumber >= thirdNumber):
+  largest = firstNumber
+else:
+   largest = thirdNumber
+
+#Print the output
+print("The largest number is", largest)
