@@ -1,18 +1,21 @@
-firstNumber = float(input("Enter first number:")) #user input
-secondNumber = float(input("Enter second number:")) #user input
-thirdNumber = float(input("Enter third number:")) #user input
+######ProblemOfTheDay-08052023######
+
+#Taking user input of the three numbers
+firstNumber = (input("Enter first number:")) #user input for the first number
+secondNumber = (input("Enter second number:")) #user input for second number
+thirdNumber = (input("Enter third number:")) #user input for third number
 
 
 #checking which of the 3 numbers is greater or if they are equal to each other
 
-if (firstNumber==secondNumber==thirdNumber):
+if (firstNumber==secondNumber==thirdNumber): #Checking if the numbers are equal to each other
   print("The numbers are all equal =",firstNumber)
-elif (secondNumber >= firstNumber) and (secondNumber >= thirdNumber):
-   largest = secondNumber
-elif (firstNumber >= secondNumber) and (firstNumber >= thirdNumber):
-  largest = firstNumber
-else:
-   largest = thirdNumber
+elif (firstNumber >= secondNumber) and (firstNumber >= thirdNumber): #Checking if the first number is the greatest
+   greatest = firstNumber
+elif (secondNumber >= firstNumber) and (secondNumber >= thirdNumber): #Checking if the second number is the greatest
+  greatest = secondNumber
+else: #if none of the pervious conditions is met then the Third number is the greatest
+   greatest = thirdNumber
 
-#Print the output
-print("The largest number is", largest)
+#Print the output of the greatest number
+print("The largest number is", greatest)
