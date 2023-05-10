@@ -10,16 +10,26 @@ s4 = np.array([8, 17, 10, -16])
 s5 = np.array([16, -16, -10, -18])
 
 #Vector Length using the absloute of the square root of the sum of squared components
-s1_Sqrt = np.power(s1[0],2)+ np.power(s1[1],2)+ np.power(s1[2],2)+ np.power(s1[3],2)
-s1_Len = abs(np.sqrt(s1_Sqrt))
-s2_Sqrt = np.power(s2[0],2)+ np.power(s2[1],2)+ np.power(s2[2],2)+ np.power(s2[3],2)
-s2_Len = abs(np.sqrt(s2_Sqrt))
-s3_Sqrt = np.power(s3[0],2)+ np.power(s3[1],2)+ np.power(s3[2],2)+ np.power(s3[3],2)
-s3_Len = abs(np.sqrt(s3_Sqrt))
-s4_Sqrt = np.power(s4[0],2)+ np.power(s4[1],2)+ np.power(s4[2],2)+ np.power(s4[3],2)
-s4_Len = abs(np.sqrt(s4_Sqrt))
-s5_Sqrt = np.power(s5[0],2)+ np.power(s5[1],2)+ np.power(s5[2],2)+ np.power(s5[3],2)
-s5_Len = abs(np.sqrt(s5_Sqrt))
+
+s1_Sqrtx = np.power(s1[1] - s1[0], 2 )
+s1_Sqrty = np.power(s1[3] - s1[2], 2 )
+s1_Len = abs(np.sqrt(s1_Sqrtx + s1_Sqrty))
+
+s2_Sqrtx = np.power(s2[1] - s2[0], 2 )
+s2_Sqrty = np.power(s2[3] - s2[2], 2 )
+s2_Len = abs(np.sqrt(s2_Sqrtx + s2_Sqrty))
+
+s3_Sqrtx = np.power(s3[1] - s3[0], 2 )
+s3_Sqrty = np.power(s3[3] - s3[2], 2 )
+s3_Len = abs(np.sqrt(s3_Sqrtx + s3_Sqrty))
+
+s4_Sqrtx = np.power(s4[1] - s4[0], 2 )
+s4_Sqrty = np.power(s4[3] - s4[2], 2 )
+s4_Len = abs(np.sqrt(s4_Sqrtx + s4_Sqrty))
+
+s5_Sqrtx = np.power(s5[1] - s5[0], 2 )
+s5_Sqrty = np.power(s5[3] - s5[2], 2 )
+s5_Len = abs(np.sqrt(s5_Sqrtx + s5_Sqrty))
 
 #Slope equation for each vector (y2-y1)/(x2-x1)
 s1_Slope = (s1[3] - s1[1]) / (s1[2] - s1 [0])
