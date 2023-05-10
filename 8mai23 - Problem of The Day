@@ -1,9 +1,9 @@
 ######ProblemOfTheDay-08052023######
 
 #Taking user input of the three numbers
-firstNumber = (input("Enter first number:")) #user input for the first number
-secondNumber = (input("Enter second number:")) #user input for second number
-thirdNumber = (input("Enter third number:")) #user input for third number
+firstNumber = float(input("Enter first number:")) #user input for the first number
+secondNumber = float(input("Enter second number:")) #user input for second number
+thirdNumber = float(input("Enter third number:")) #user input for third number
 
 
 #checking which of the 3 numbers is greater or if they are equal to each other
