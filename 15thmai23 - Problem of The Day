@@ -1,0 +1,45 @@
+def splitPoint(arr, n) :
+   
+    leftSum = 0 
+    
+    # traverse array element
+    for i in range(0, n) :
+       
+        # add current element to left Sum
+        leftSum += arr[i] 
+    
+        # find sum of rest array elements (rightSum)
+        rightSum = 0 
+        for j in range(i+1, n) :
+            rightSum += arr[j] 
+    
+        # split point index
+        if (leftSum == rightSum) :
+            return i+1 
+       
+    
+    # if it is not possible to split array into
+    # two parts
+    return -1
+   
+    
+# Prints if true or false after finding split point using
+def findIfTwoParts(arr, n) :
+   
+    splitPo = splitPoint(arr, n)
+    
+    if (splitPo == -1 or splitPo == n ) :
+        print ("false")
+        return
+       
+    for i in range(0, n) :
+        if(splitPo == i) :
+            print ("true")
+   
+#Main operating function
+split1 = [2,6,1,9]
+split2 = [7,6,2]
+n1 = len(split1)
+n2 = len(split2)
+findIfTwoParts(split1, n1)
+findIfTwoParts(split2, n2)
