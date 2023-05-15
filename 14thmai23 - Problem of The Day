@@ -1,19 +1,15 @@
-def noRep(arr, n):
-    for i in range(n):
-        j = 0
-        # checking if the number is existing in the array
-        while(j < n):
-            if (i != j and arr[i] == arr[j]):
-                break
-            j += 1
-        if (j == n):
-            return arr[i]
- 
-    return -1
- 
- 
+non_Rep = [1, 2, 7, 5, 8, 2, 1] #
+length = len(non_Rep) #
 
-non_Rep = [1, 2, 7, 5, 8, 2, 1]
-length = len(non_Rep)
-print(noRep(non_Rep, length))
-
+for i in range(length):
+  j = 0
+  # Checking if the element is present in array
+  while(j < length):
+    if (i != j and non_Rep[i] == non_Rep[j]):
+      break
+      j += 1
+    if (j == length):
+        print ("Found the first repeating number!")
+        break
+        
+print ("The first nonrpeating number is:", j)
