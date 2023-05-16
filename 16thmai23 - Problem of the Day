@@ -1,0 +1,45 @@
+rows1 = 5
+rows2 = 2
+
+##left hand side:
+# Outer loop will print the number of rows  
+for i in range(rows1 +1 ,0):  
+    # This inner loop will print the stars  
+    for j in range(0, i + 1):  
+        print("*", end=' ')  
+    # Change line after each iteration  
+    print(" ")  
+# Outer loop will print the number of rows  
+for i in range(rows1+1, 0, -1):  
+    # This inner loop will print the stars  
+    for j in range(0, i - 1):  
+        print("*", end=' ')  
+    # Change line after each iteration  
+    print(" ")  
+
+##middle part:
+# Outer loop will print the number of rows  
+for i in range(0, rows2):  
+    # This inner loop will print the stars  
+    for j in range(0, rows2+ 1):  
+        print("-", end=' ')  
+    # Change line after each iteration  
+    print(" ")  
+
+##right hand side:
+# Outer loop will print the number of rows  
+for i in range(0, rows1):  
+    # This inner loop will print the stars  
+    for j in range(0, i + 1):  
+        print("*", end=' ')  
+    # Change line after each iteration  
+    print(" ")  
+# Outer loop will print the number of rows  
+for i in range(rows1+1, 0, -1):  
+    # This inner loop will print the stars  
+    for j in range(0, i - 1):  
+        print("*", end=' ')  
+    # Change line after each iteration  
+    print(" ")  
+
+
