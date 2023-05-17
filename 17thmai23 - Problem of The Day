@@ -1,0 +1,18 @@
+#Start a function to use to calculate the array after rotation
+def ArrayRot():
+  in_Range = int(input("Enter number of rotations required: "))
+  arr = [1, 2, 3, 4, 5]
+  temp_arr = []
+  length=len(arr)
+  
+  for i in range(in_Range,length): #a loop done to store each element in the temp_arr
+      temp_arr.append(arr[i])
+  i = 0
+  for i in range (0,in_Range): #a loop done to store each element in the temp_arr
+    temp_arr.append(arr[i])
+    arr=temp_arr.copy() #Copying the elemnts from temp_arr to the main array arr
+    
+  print("Array after left rotation is: ", arr)
+  print("left rotation time =  ", in_Range)
+
+ArrayRot()
