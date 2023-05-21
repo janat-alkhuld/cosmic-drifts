@@ -1,0 +1,17 @@
+#Print the most repeated element in a list
+def most_Rep(List):
+    count = 0
+    num = List[0]
+     
+    for i in List:
+        freq = List.count(i)
+        if(freq> count):
+            count = freq
+            num = i
+ 
+    return num
+ 
+List = [1,8,7,4,1,2,2,2]
+
+print("The array is:",List)
+print("The most repeated element is",most_Rep(List))
