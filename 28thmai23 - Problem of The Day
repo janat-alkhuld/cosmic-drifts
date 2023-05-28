@@ -1,0 +1,8 @@
+lst1 = [1,4,5,7,3,0]
+lst2 = [1,2,3,4]
+
+
+input1 = [element[1] for element in filter(lambda x: x[1] > x[0], zip(lst1, lst1[1:]))]
+input2 = [element[1] for element in filter(lambda x: x[1] > x[0], zip(lst2, lst2[1:]))]
+print(input1)
+print(input2)
