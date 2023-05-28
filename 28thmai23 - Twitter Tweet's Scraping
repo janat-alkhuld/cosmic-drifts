@@ -1,0 +1,36 @@
+import tweepy
+import csv
+
+# Twitter API's credentials
+consumer_key = 'YOUR_CONSUMER_KEY'
+consumer_secret = 'YOUR_CONSUMER_SECRET'
+access_token = 'YOUR_ACCESS_TOKEN'
+access_token_secret = 'YOUR_ACCESS_TOKEN_SECRET'
+
+# Authentication of Twitter's API
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+auth.set_access_token(access_token, access_token_secret)
+api = tweepy.API(auth)
+
+query = input("Enter the search query: ")
+
+# Get the maximum number of tweets to scrape from the user
+max_tweets = int(input("Enter the maximum number of tweets to scrape: "))
+
+tweets = []
+for tweet in tweepy.Cursor(api.search, q=query, tweet_mode='extended').items(max_tweets):
+    data = {
+        'Username': tweet.user.screen_name,
+        'Timestamp': tweet.created_at,
+        'Text': tweet.full_text
+    }
+    tweets.append(data)
+
+output_file = 'scraped_tweets.csv'
+
+with open(output_file, 'w', newline='', encoding='utf-8') as file:
+    writer = csv.DictWriter(file, fieldnames=['Username', 'Timestamp', 'Text'])
+    writer.writeheader()
+    writer.writerows(tweets)
+
+print("Tweets have been scraped and saved to", output_file)
