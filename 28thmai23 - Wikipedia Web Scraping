@@ -1,0 +1,31 @@
+import requests
+from bs4 import BeautifulSoup
+import json
+
+def scrape_wikipedia_page(url):
+    response = requests.get(url)
+    soup = BeautifulSoup(response.content, 'html.parser')
+    #finding the main content in HTML
+    content = soup.find(id='content')
+    #finding the Header to display the title in HTML
+    title = content.find('h1').text.strip()
+    #finding the Header t display the paragaraphs in HTML
+    paragraphs = [p.text.strip() for p in content.find_all('p')]
+    
+    data = {
+        'title': title,
+        'paragraphs': paragraphs
+    }
+    
+    return data
+
+url = input("Enter the URL of the Wikipedia page: ")
+
+scraped_data = scrape_wikipedia_page(url)
+
+output_file = 'scraped_data.json'
+
+with open(output_file, 'w') as file:
+    json.dump(scraped_data, file)
+
+print("Check Your JSON File for relevent information.")
