@@ -1,0 +1,23 @@
+import random
+import statistics
+
+# Generate a list of 10 random integers between 1 and 100
+random_numbers = [random.randint(1, 100) for _ in range(10)]
+
+# Standardise the numbers
+mean = statistics.mean(random_numbers)
+std_dev = statistics.stdev(random_numbers)
+standardized_numbers = [(num - mean) / std_dev for num in random_numbers]
+
+# Normalise the numbers
+min_value = min(random_numbers)
+max_value = max(random_numbers)
+normalized_numbers = [(num - min_value) / (max_value - min_value) for num in random_numbers]
+
+# Print the original, standardised, and normalised numbers
+print("Original Numbers:")
+print(random_numbers)
+print("Standardised Numbers:")
+print(standardized_numbers)
+print("Normalised Numbers:")
+print(normalized_numbers)
