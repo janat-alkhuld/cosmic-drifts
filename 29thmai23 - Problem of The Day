@@ -1,0 +1,12 @@
+def Multiples(length, num):
+    multiples = []
+    count = 1
+    while len(multiples) < length:
+        multiples.append(num * count)
+        count += 1
+    return multiples
+
+length = int(input("Enter the Length of your List:"))
+num = int(input("Enter your starting Number:"))
+result = Multiples(length, num)
+print(result)
