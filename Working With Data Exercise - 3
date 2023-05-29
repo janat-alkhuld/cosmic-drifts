@@ -1,0 +1,20 @@
+import random
+import matplotlib.pyplot as plt
+
+# Generate a list of 100 random pairs of integers between 1 and 100
+random_pairs = [(random.randint(1, 100), random.randint(1, 100)) for _ in range(100)]
+
+# Extract x and y values from the pairs
+x_values = [pair[0] for pair in random_pairs]
+y_values = [pair[1] for pair in random_pairs]
+
+# Create a scatter plot
+plt.scatter(x_values, y_values)
+
+# Set plot title and labels
+plt.title("Scatter Plot of Random Pairs")
+plt.xlabel("X Values")
+plt.ylabel("Y Values")
+
+# Display the plot
+plt.show()
