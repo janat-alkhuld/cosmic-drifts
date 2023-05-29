@@ -1,0 +1,18 @@
+import random
+import statistics
+
+# Generate a list of 1000 random integers between 1 and 100000
+random_numbers = [random.randint(1, 100000) for _ in range(1000)]
+
+# Calculate the mean and standard deviation
+mean = statistics.mean(random_numbers)
+std_dev = statistics.stdev(random_numbers)
+
+# Calculate the Z-Scores for each number
+z_scores = [(num - mean) / std_dev for num in random_numbers]
+
+# Identify outliers with Z-Score > 2
+outliers = [num for num, z_score in zip(random_numbers, z_scores) if abs(z_score) > 2]
+
+# Print the outliers
+print("Outliers:",outliers)
