@@ -1,0 +1,15 @@
+def area(country_name, area_percentage):
+    world_area = 148940000
+    country_area = (float(area_percentage) / 100) * world_area
+    country_percentage = (country_area / world_area) * 100
+    return country_percentage
+
+# Get user inputs for country name and area percentage
+country_name = input("Enter the country name: ")
+area_percentage = input("Enter the area percentage occupied by the country: ")
+
+# Calculate the country's percentage using the area() function
+country_percentage = area(country_name, area_percentage)
+
+# Print the result
+print(f"The percentage of the world's area occupied by {country_name} is {country_percentage}%.")
