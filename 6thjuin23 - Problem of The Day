@@ -1,0 +1,10 @@
+@https://replit.com/@AfternoonCoder/NavajowhiteKnowledgeableStructures#main.py
+
+codeAcademy = input("Enter one of the following statments:\n 'This is Code Academy' \n 'Code Academy is an educational Centre' \n")
+
+if codeAcademy == "This is Code Academy" :
+  print("I found Code Academy at 3!")
+elif codeAcademy == "Code Academy is an educational Centre":
+  print("I found Code Academy at 1!")
+else:
+  print("I didn't find Code Academy.")
