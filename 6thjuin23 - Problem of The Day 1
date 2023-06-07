@@ -1,0 +1,13 @@
+@https://replit.com/@AfternoonCoder/ClumsyPunyRepositories#main.py
+
+def discount(price, discount_percentage):
+    discount_amount = price * (discount_percentage / 100)
+    discounted_price = price - discount_amount
+    return discounted_price
+
+price = float(input("Enter the price: "))
+discount_percentage = float(input("Enter the discount percentage: "))
+
+final_price = discount(price, discount_percentage)
+print("Price after discount:", final_price)
+
