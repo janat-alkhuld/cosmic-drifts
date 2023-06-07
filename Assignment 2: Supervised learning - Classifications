@@ -63,3 +63,38 @@ dot_data = tree.export_graphviz(classifier, out_file=None,
                                 filled=True, rounded=True, special_characters=True)
 graph = graphviz.Source(dot_data)
 graph.render("loan_decision_tree", format="png", view=True)
+
+------------------------------------------------------------------------------------------------------------------------------------
+# Constants
+cost_per_unit = 20
+price_per_unit = 40
+fixed_cost = 50000
+demand = 10000
+
+# Calculate the profit if demand is greater than or equal to 10,000 units
+profit_high_demand = (price_per_unit - cost_per_unit) * demand
+
+# Calculate the profit if demand is less than 10,000 units
+profit_low_demand = (price_per_unit - cost_per_unit) * demand - fixed_cost
+
+# Calculate the expected value of launching the product
+expected_value_launch = (profit_high_demand * (demand >= 10000) + profit_low_demand * (demand < 10000)) / demand
+
+# Calculate the expected value of not launching the product
+expected_value_not_launch = 0
+
+# Compare the expected values and provide a recommendation
+if expected_value_launch > expected_value_not_launch:
+    recommendation = "Launch the product."
+else:
+    recommendation = "Do not launch the product."
+
+# Print the decision tree and recommendation
+print("Decision Tree:")
+print("1. If demand is greater than or equal to 10,000 units, launch the product.")
+print("2. If demand is less than 10,000 units, do not launch the product.")
+print()
+print("Expected Value of Launching the Product: $", expected_value_launch)
+print("Expected Value of Not Launching the Product: $", expected_value_not_launch)
+print()
+print("Recommendation:", recommendation)
