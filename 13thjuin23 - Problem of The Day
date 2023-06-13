@@ -1,0 +1,33 @@
+@https://replit.com/@AfternoonCoder/StunningBlissfulMapping#main.py
+
+def length(lst):
+    count = 0
+    for item in lst:
+        if isinstance(item, list):
+            count += length(item)
+        else:
+            count += 1
+    return count
+
+# Example usage
+def parse_nested_list(input_str):
+    nested_list = []
+    stack = [nested_list]
+
+    for char in input_str:
+        if char == "[":
+            new_list = []
+            stack[-1].append(new_list)
+            stack.append(new_list)
+        elif char == "]":
+            stack.pop()
+        else:
+            if char.isdigit():
+                stack[-1].append(int(char))
+    
+    return nested_list
+
+input_str = input("Enter a nested list: ")
+nested_list = parse_nested_list(input_str)
+list_length = length(nested_list)
+print("Length of the list:", list_length)
